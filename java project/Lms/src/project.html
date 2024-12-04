@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning management system</title>
+    <link rel="stylesheet" href="project.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <a href="#" class="brand">LMS</a>
+        <div class="menu-btn"></div>
+        <div class="navigation">
+            <div class="navigation-items">
+                <a href="#">Sign-In</a>
+                <a href="#">About</a>
+                <a href="#">Explore</a>
+                <a href="#">Gallery</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="home">
+        <video class="video-slide active" src="" autoplay muted loop></video>
+        <video class="video-slide" src="" autoplay muted loop></video>
+        <video class="video-slide" src="" autoplay muted loop></video>
+        <video class="video-slide" src="" autoplay muted loop></video>
+        <video class="video-slide" src="" autoplay muted loop></video>
+        <div class="content active">
+            <h1>Engineering<br><span>Maths</span></h1>
+            <p>Engineering mathematics is a branch of applied mathematics that concerns mathematical methods and techniques typically used in engineering and industry. It is an interdisciplinary subject motivated by engineers’ needs for practical, theoretical, and other considerations outside their specialization, and to deal with constraints to be effective in their work.</p>
+            <a href="https://engineering-computer-science.wright.edu/research/engineering-mathematics-topics-and-materials">Read More</a>
+        </div>
+        <div class="content">
+            <h1>OOPS<br><span>Concep</span></h1>
+            <p>Object means a real-world entity such as a pen, chair, table, computer, watch, etc. Object-Oriented Programming is a methodology or paradigm to design a program using classes and objects. It simplifies software development and maintenance by providing some concepts:</p>
+            <a href="https://www.geeksforgeeks.org/object-oriented-programming-oops-concept-in-java/">Read More</a>
+        </div>
+        <div class="content">
+            <h1>Data<br><span>Structures</span></h1>
+            <p>The data structure name indicates itself that organizing the data in memory. There are many ways of organizing the data in the memory as we have already seen one of the data structures, i.e., array in C language. Array is a collection of memory elements in which data is stored sequentially, i.e., one after another. In other words, we can say that array stores the elements in a continuous manner. This organization of data is done with the help of an array of data structures.</p>
+            <a href="https://www.geeksforgeeks.org/learn-dsa-in-cpp/">Read More</a>
+        </div>
+        <div class="content">
+            <h1>Machine<br><span>Design</span></h1>
+            <p>Machine design is a critical discipline that encompasses the creation, development, and optimization of mechanical systems and components. It involves the application of engineering principles, scientific knowledge, and practical considerations to design machines that fulfill specific purposes.</p>
+            <a href="https://www.vssut.ac.in/lecture_notes/lecture1529931898.pdf">Read More</a>
+        </div>
+        <div class="content">
+            <h1>Operating<br><span>Systems</span></h1>
+            <p>Time-sharing operating systems schedule tasks for efficient use of the system and may also include accounting software for cost allocation of processor time, mass storage, peripherals, and other resources.</p>
+            <a href="https://edu.gcfglobal.org/en/computerbasics/understanding-operating-systems/1/">Read More</a>
+        </div>
+        <div class="media-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+        <div class="slider-navigation">
+            <div class="nav-btn active"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+        </div>
+    </section>
+
+    <script type="text/javascript">
+    //Javascript of responsive navigation menu
+    const menuBtn = document.querySelector(".menu-btn");
+    const navigation = document.querySelector(".navigation");
+
+    menuBtn.addEventListener("click", () => {
+        menuBtn.classList.toggle("active");
+        navigation.classList.toggle("active");
+    });
+
+    //javascript for video slider navigation\
+    const btns = document.querySelectorAll(".nav-btn");
+    const slides = document.querySelectorAll(".video-slide");
+    const contents = document.querySelectorAll(".content");
+
+    var sliderNav =  function(manual){
+        btns.forEach((btn) => {
+            btn.classList.remove("active");
+        });
+
+        slides.forEach((slide) => {
+            slide.classList.remove("active");
+        });
+
+        contents.forEach((content) => {
+            content.classList.remove("active");
+        });
+
+        btns[manual].classList.add("active");
+        slides[manual].classList.add("active");
+        contents[manual].classList.add("active");
+    }
+
+    btns.forEach((btn, i) => {
+        btn.addEventListener("click", () => {
+            sliderNav(i);
+        });
+    });
+
+    </script>
+    
+</body>
+</html>
